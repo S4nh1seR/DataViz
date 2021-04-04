@@ -115,7 +115,7 @@ class CTreeDrawer:
             self.set_coord(child, depth + 1, cum_shift + self.displacements[child])
 
 
-    def build_plot(self, tree, save_path):
+    def build_plot(self, tree, ranges, save_path):
         # Построение картинки-визуализации
         node_y, node_x = zip(*self.coord.values())
         edge_y, edge_x = [], []
@@ -138,8 +138,10 @@ class CTreeDrawer:
                                  marker=dict(symbol='circle-dot', size=18, color='#6175c1',
                                              line=dict(color='rgb(50,50,50)', width=1)),
                                  text=labels, hoverinfo='text', opacity=0.8))
+        pix_per_y = 50
+        pix_per_x = 30
         fig.update_layout(showlegend=False,
-                          # width=1000, height=1000,
+                          width=pix_per_x * ranges[1], height=pix_per_y * ranges[0],
                           annotations=annot, margin=dict(t=0,b=0,l=0,r=0))
 
         if save_path is not None:
@@ -165,7 +167,7 @@ class CTreeDrawer:
         for node, (y, x) in self.coord.items():
             self.coord[node] = (max_y - y + 1, x - min_x + 1)
 
-        return self.build_plot(tree, save_path)
+        return self.build_plot(tree, (max_y, max_x - min_x), save_path)
 
 
 def main():

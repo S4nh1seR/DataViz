@@ -6,7 +6,7 @@
 
 ## Запуск кода
 
-### Запуск в ноутбуке на колабе
+### Запуск ноутбука на колабе [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/S4nh1seR/DataViz/blob/main/treeviz/treeviz.ipynb)
 
 ### Запуск скрипта
 python treeviz.py -gp ./graphml_trees/tree-dense.xml -ip ./results/tree-dense.svg
