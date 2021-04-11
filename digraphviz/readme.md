@@ -34,11 +34,11 @@ python digraphviz.py -gp ./graph_examples/from_book.xml -ip ./results/graham_cof
 
 Пример 1 (Минимизация количества dummy-вершин):
 
-![test1_mindummy](./results/dummy_minimized/test2.svg)
+![test1_mindummy](./results/dummy_minimized/test1.svg)
 
 Пример 2 (Грэхем-Коффман, ограничение на ширину - 3):
 
-![test2_graham_coffman](./results/graham_coffman/test1.svg)
+![test2_graham_coffman](./results/graham_coffman/test2.svg)
 
 Пример 2 (Минимизация количества dummy-вершин):
 
