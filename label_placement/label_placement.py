@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
 import plotly.graph_objects as go
 import argparse
 
@@ -127,7 +131,11 @@ def draw_label_rects(boxes, choosed_indices, save_path=None):
     pos_y = [box.pos.xy[1] for box in boxes]
     fig.add_trace(go.Scatter(x=pos_x, y=pos_y, mode='markers',
                              marker=dict(symbol='circle-dot', size=5, color='rgb(255, 0, 0)'), opacity=1.0))
+
+    pix_per_y = 4
+    pix_per_x = 4
     fig.update_layout(showlegend=False,
+                      width=pix_per_x * (max_x - min_x), height=pix_per_y * (max_y - min_y),
                       margin=dict(t=0, b=0, l=0, r=0))
 
     if save_path is not None:
